@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTurnoTable extends Migration
+class CreateProveedorTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateTurnoTable extends Migration
      */
     public function up()
     {
-        Schema::create('turno', function (Blueprint $table) {
+        Schema::create('proveedor', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre_proveedor');
+            $table->string('direccion_proveedor');
+            $table->string('telefono_proveedor');
+            $table->string('email')->unique();
             $table->timestamps();
-            $table->string('descripcion');
         });
     }
 
@@ -27,6 +30,6 @@ class CreateTurnoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('turno');
+        Schema::dropIfExists('proveedor');
     }
 }
