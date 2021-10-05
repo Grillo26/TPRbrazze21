@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class plato_pedido extends Model
 {
     use HasFactory;
-    //relacion uno a muchos invertida
+    //Relacion uno a muchos inversa
+    public function pedido(){
+        return $this->belongsTo('App\Models\pedido');
+    }
     public function plato(){
         return $this->belongsTo('App\Models\plato');
     }

@@ -12,6 +12,9 @@ class pedido extends Model
     public function ventas(){
         return $this->hasMany('App\Models\venta');
     }
+    public function pedidos(){
+        return $this->hasMany('App\Models\pedido');
+    }
 
     //relacion uno a muchos invertida
     public function cliente(){
