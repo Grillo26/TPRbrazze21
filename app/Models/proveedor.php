@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class proveedor extends Model
 {
     use HasFactory;
+    protected $table = "proveedor";
+    
     //Relacion uno a muchos
     public function proveedorInsumos(){
         return $this->hasMany('App\Models\proveedor_insumo');
