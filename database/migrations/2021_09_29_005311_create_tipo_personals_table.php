@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInsumoTable extends Migration
+class CreateTipoPersonalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateInsumoTable extends Migration
      */
     public function up()
     {
-        Schema::create('insumo', function (Blueprint $table) {
+        Schema::create('tipo_personals', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre_insumo');
-            $table->integer('cantidad');
-            $table->string('unidadmedida_insumo');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateInsumoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('insumo');
+        Schema::dropIfExists('tipo_personals');
     }
 }
